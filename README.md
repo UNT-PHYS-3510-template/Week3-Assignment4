@@ -1,17 +1,13 @@
-# Week 3 Assignment 3
+# Week 3 Assignment 4
 
-In the previous assignment we tested two ways to compute the average value of a function within an interval. This can be useful to estimate the definite integral of the function:
+As we can use python to calculate definite integrals of a function, we can also design algorithms to compute the derivative of a function. In the previous week, assignment 1, you implemented the analytic formula for the force between two Argon atoms, taking the derivative of the Lennard-Jones potential. In this assignment, you will implement an approximate estimate of the force using finite differences. If you remember your Calculus course, the derivative of a function can be written as the limit of the difference quotient:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\int_a^bf(x)dx\approx&space;(b-a)\bar{f}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\int_a^bf(x)dx\approx&space;(b-a)\bar{f}" title="\int_a^bf(x)dx\approx (b-a)\bar{f}" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=f'(x)=\lim_{h\rightarrow0}\frac{f(x&plus;h)-f(x)}{h}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f'(x)=\lim_{h\rightarrow0}\frac{f(x&plus;h)-f(x)}{h}" title="f'(x)=\lim_{h\rightarrow0}\frac{f(x+h)-f(x)}{h}" /></a>
 
-However, there are less approximate ways of computing the integral of a function using a numerical algorithm. One of the simplest is the midpoint rule, where the integration domain is split into a set of regular and small intervals, and the area below the function within each interval is estimated from the value of the function in the midpoint
+Using this formula, we can compute the force at a given separation between the atoms as 
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\int_a^bf(x)dx\approx&space;\frac{b-a}{n}\sum&space;_{i=0}^{n-1}f\left(a&plus;\left(i&plus;\frac{1}{2}\right)\frac{b-a}{n}&space;\right&space;)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\int_a^bf(x)dx\approx&space;\frac{b-a}{n}\sum&space;_{i=0}^{n-1}f\left(a&plus;\left(i&plus;\frac{1}{2}\right)\frac{b-a}{n}&space;\right&space;)" title="\int_a^bf(x)dx\approx \frac{b-a}{n}\sum _{i=0}^{n-1}f\left(a+\left(i+\frac{1}{2}\right)\frac{b-a}{n} \right )" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=F^{LJ}(r)=-\lim_{h\rightarrow0}\frac{U^{LJ}(r&plus;h)-U^{LJ}(r)}{h}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F^{LJ}(r)=-\lim_{h\rightarrow0}\frac{U^{LJ}(r&plus;h)-U^{LJ}(r)}{h}" title="F^{LJ}(r)=-\lim_{h\rightarrow0}\frac{U^{LJ}(r+h)-U^{LJ}(r)}{h}" /></a>
 
-(see the following image taken from https://tutorial.math.lamar.edu/classes/calcii/approximatingdefintegrals.aspx)
+TASK: Given the expression for the Lennard-Jones potential energy (see Week 1 Assignment 3), compute the associated magnitude of the force between two atoms using the formula above. Find a value of the parameter h small enough to provide an error smaller than 1.e-8 with respect to the analytic result (see Week 2 Assignment 1). 
 
-![midpoint rule](https://tutorial.math.lamar.edu/classes/calcii/ApproximatingDefIntegrals_Files/image001.png)
-
-TASK: In the midpoint.py program you can find the basic loop to perform midpoint integration of a generic function f in an interval \[a,b\]. Modify the code to compute the integral of the sine function between 0 and pi. Find a value of the number n of small intervals that is needed to get a result that is correct up to the 10th decimal digit (i.e. the error is less than 1e-10). 
-
-EXPECTED OUTCOME: The integral of sine between 0 and pi should be easy to compute analytically. The number of intervals needed to achieve the given accuracy should be about 10000. 
+EXPECTED OUTCOME: For a value of the separation between the atoms equal to sigma (6 a.u.), the analytic LJ force is equal to 4\*epsilon (1.6e-3 a.u.). A finite-difference estimate with h = 0.001 a.u. should give an error smaller than the given threshold.
