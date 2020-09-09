@@ -4,7 +4,7 @@ As we can use python to calculate definite integrals of a function, we can also 
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=f'(x)=\lim_{h\rightarrow0}\frac{f(x&plus;h)-f(x)}{h}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f'(x)=\lim_{h\rightarrow0}\frac{f(x&plus;h)-f(x)}{h}" title="f'(x)=\lim_{h\rightarrow0}\frac{f(x+h)-f(x)}{h}" /></a>
 
-Using this formula, we can compute the force at a given separation between the atoms as 
+Using this formula, we can compute the LJ force at a given separation between the atoms as 
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=F^{LJ}(r)=-\lim_{h\rightarrow0}\frac{U^{LJ}(r&plus;h)-U^{LJ}(r)}{h}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F^{LJ}(r)=-\lim_{h\rightarrow0}\frac{U^{LJ}(r&plus;h)-U^{LJ}(r)}{h}" title="F^{LJ}(r)=-\lim_{h\rightarrow0}\frac{U^{LJ}(r+h)-U^{LJ}(r)}{h}" /></a>
 
