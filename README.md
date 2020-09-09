@@ -8,6 +8,6 @@ Using this formula, we can compute the LJ force at a given separation between th
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=F^{LJ}(r)=-\lim_{h\rightarrow0}\frac{U^{LJ}(r&plus;h)-U^{LJ}(r)}{h}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F^{LJ}(r)=-\lim_{h\rightarrow0}\frac{U^{LJ}(r&plus;h)-U^{LJ}(r)}{h}" title="F^{LJ}(r)=-\lim_{h\rightarrow0}\frac{U^{LJ}(r+h)-U^{LJ}(r)}{h}" /></a>
 
-TASK: Given the expression for the Lennard-Jones potential energy (see Week 1 Assignment 3), compute the associated magnitude of the force between two atoms using the formula above. Find a value of the parameter h small enough to provide an error smaller than 1.e-8 with respect to the analytic result (see Week 2 Assignment 1). 
+TASK: Given the expression for the Lennard-Jones potential energy (see Week 1 Assignment 3), compute the associated magnitude of the force between two atoms using the formula above, assuming that *h* is a fixed numerical parameter: as this value becomes smaller, we approach the result of the limit, thus we should get close to the exact derivative. Find a value of the parameter *h* small enough to provide an error smaller than 1.e-8 with respect to the analytic result (see Week 2 Assignment 1). 
 
 EXPECTED OUTCOME: For a value of the separation between the atoms equal to sigma (6 a.u.), the analytic LJ force is equal to 4\*epsilon (1.6e-3 a.u.). A finite-difference estimate with h = 0.001 a.u. should give an error smaller than the given threshold.
