@@ -1,2 +1,2 @@
 language = "bash"
-run = "python midpoint.py"
+run = "python finite_differences.py"
